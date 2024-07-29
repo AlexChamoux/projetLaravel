@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 class ProductController
 {
     public function index(){
-        return 'Liste des produits';
+        return View('product-list');
     }
 
     public function show($id){
-        return "Fiche du produit ".$id;
+        return View('product-details', ['id' => $id]);
     }
 
 }
