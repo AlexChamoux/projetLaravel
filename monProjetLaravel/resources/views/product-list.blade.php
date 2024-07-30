@@ -1,3 +1,13 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titre</title>
+</head>
+<body>
+    <h2>Liste des produits</h2>
 
-echo 'Liste des produits';
+
+</body>
+</html>

@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
-class ProductController
+use Illuminate\Http\Request;
+
+class ProductController extends Controller
 {
-    public function index(){
-        return View('product-list');
+    public function index()
+    {
+        return view('product-list');
     }
 
-    public function show($id){
-        return View('product-details', ['id' => $id]);
+    public function show($id)
+    {
+        return view('product-details', ['id' => $id]);
     }
 
 }
