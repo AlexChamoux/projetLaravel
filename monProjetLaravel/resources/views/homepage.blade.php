@@ -1,8 +1,11 @@
-<?php
+@include('header')
 
-echo "HomePage";
 
-//?>
+<main role="main" class="container">
 
+
+</main>
+
+@include('footer')
 
 
