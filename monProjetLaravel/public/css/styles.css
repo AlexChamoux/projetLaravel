@@ -32,11 +32,19 @@
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.product-image {
-    width: 100%;
-    height: auto;
+#product-image {
+    width: 6vw;
 }
 
-#quantity{
+#quantity-thumbnail{
     width: 2.5vw;
+}
+
+.border-cart{
+    padding: 2vw;
+    border: 1px solid black;
+}
+
+th{
+    width: 15vw;
 }
