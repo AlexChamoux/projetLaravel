@@ -13,7 +13,7 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        return view('homepage');
+        return view('product-details', ['id' => $id]);
     }
 
 }

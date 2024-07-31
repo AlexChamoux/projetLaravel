@@ -29,7 +29,7 @@ footer.py-5{
 .col-2 {
     color: #FF2E63;
 }
-p{
+.text{
     color: #FF2E63;
     font-weight:  bold;
     font-family: sans-serif;
@@ -83,6 +83,7 @@ p{
 .border-cart{
     padding: 2vw;
     border: 1px solid black;
+    margin-bottom: 5vh;
 }
 
 th{

@@ -1,6 +1,6 @@
 <footer>
-    <div class="container">
-        <footer class="py-5">
+    <div >
+        <footer class="py-5 ps-4">
             <div class="row">
                 <div class="col-2">
                     <h5>Sneakers</h5>
@@ -30,9 +30,9 @@
             </div>
 
             <div class="d-flex justify-content-between py-4 my-4 border-top">
-                <p>CGV</p>
-                <p> Mentions légales</p>
-                <p>Protection des données</p>
+                <p class="text">CGV</p>
+                <p class="text"> Mentions légales</p>
+                <p class="text">Protection des données</p>
                 <ul class="list-unstyled d-flex">
                     <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
                     <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
