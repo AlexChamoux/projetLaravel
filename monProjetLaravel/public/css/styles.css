@@ -40,3 +40,29 @@
 #quantity{
     width: 2.5vw;
 }
+
+/* Styles du footer */
+.footer {
+    background-color: #333333;
+    color: #ffffff
+}
+
+.footer h5 {
+    color: #ffffff !important;
+}
+
+.footer ul li {
+    color: #ffffff !important;
+}
+
+.footer a {
+    color: #ffffff !important;
+}
+
+.footer a:hover {
+    color: #cccccc !important;
+}
+
+.footer p {
+    color: #cccccc !important;
+}
