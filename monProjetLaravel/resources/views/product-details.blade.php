@@ -40,15 +40,12 @@
 
         </div>
         <div class="col-md-6">
-            <div>
-            <h2>Nom du Produit</h2>
-            </div>
-            <div>
-            <h3>Prix du Produit</h3>
-            </div>
-            <form action="{{url('/cart') }}" method="post">
-                <input type="number" name="quantity" id="quantity">
-
+            <h2 class="mb-3">Nom du Produit</h2>
+            <h3 class="mb-3">Prix du Produit (TTC)</h3>
+            <h4 class="mb-3 bg-danger discount">- N% </h4>
+            <h4 class="mb-3 stock">En stock</h4>
+            <form action="{{ url('/cart') }}" method="post">
+                <input type="number" name="quantity" id="quantity" class="mb-3">
                 <input type="submit" value="Ajouter au panier">
             </form>
         </div>
