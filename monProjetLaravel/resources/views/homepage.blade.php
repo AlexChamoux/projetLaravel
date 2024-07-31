@@ -11,16 +11,14 @@
 <body>
 <header>
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark d-flex justify-content-between navbar-custom  toto mb-5 ps-3 ">
-        <div class="d-flex justify-content-between">
-            <a class="navbar-brand" href="#"><img src="{{asset('images/image.png')}}" alt="mon" height="80"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <nav class="navbar navbar-expand-md navbar-dark d-flex justify-content-between navbar-custom mb-5 ps-3 " >
+        <div class="d-flex justify-content-between ms-5">
+            <a class="navbar-brand" href="#"><img src="{{asset('images/image.png')}}" alt="mon" height="75"></a>
 
-            <ul class="navbar-nav mr-auto mt-3">
+
+            <ul class="navbar-nav mr-auto mt-3 ">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle " href="product-list.blade.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle toto " href="product-list.blade.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Chaussures
                         </a>
                         <ul class="dropdown-menu">
@@ -34,7 +32,7 @@
                     </li>
             </ul>
         </div>
-        <div>
+        <div class="me-5 ">
                         <form class="d-flex mb-3 ml-auto p-2" role="search">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Rechercher</button>
@@ -46,30 +44,58 @@
     </nav>
 
 </header>
+
+
 <main role="main" class="container">
-    <img src="{{asset('images/image.png')}}" alt="mon">
+
 
 </main>
-<footer class="footer">
-    <div class="container ">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <p class="col-md-4 mb-0 text-body-secondary">© 2024 Company, Inc</p>
 
-            <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-            </a>
 
-            <ul class="nav col-md-4 justify-content-end">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+
+
+<div class="container">
+    <footer class="py-5">
+        <div class="row">
+            <div class="col-2">
+                <h5>Sneakers</h5>
+
+            </div>
+
+            <div class="col-2">
+                <h5>Chaussures de Skate</h5>
+
+            </div>
+
+            <div class="col-2">
+                <h5>Chaussure de Montagne</h5>
+
+            </div>
+
+            <div class="col-4 offset-1">
+                <form>
+                    <h5>Inscrivez-vous à notre newsletter</h5>
+                    <div class="d-flex w-100 gap-2">
+                        <label for="newsletter1" class="visually-hidden">Addresse mail</label>
+                        <input id="newsletter1" type="text" class="form-control" placeholder="Addresse mail">
+                        <button class="btn btn-primary" type="button">S'abonner</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between py-4 my-4 border-top">
+            <p>CGV</p>
+            <p> Mentions légales</p>
+            <p>Protection des données</p>
+            <ul class="list-unstyled d-flex">
+                <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+                <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+                <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
             </ul>
-        </footer>
-    </div>
-
-</footer>
+        </div>
+    </footer>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
