@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titre</title>
-</head>
-<body>
-    <h2>Liste des produits</h2>
+@include('header')
 
+<div class="container">
+    <div class="row">
+        @for ($i = 0; $i < 10; $i++)
+            <div class="col-md-3">
+                @include('thumbnail')
+            </div>
+        @endfor
+    </div>
+</div>
 
-</body>
-</html>
+@include('footer')
