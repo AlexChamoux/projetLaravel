@@ -1,3 +1,4 @@
+
 .navbar-custom, .navbar-brand {
     background-color: #E2F4FC;
     color: #FF2E63;
@@ -23,17 +24,11 @@ ul.dropdown-menu.show {
     font-weight:  bold;
     font-family: sans-serif;
 }
-footer.py-5{
-    background-color: #E2F4FC;
-}
+
 .col-2 {
     color: #FF2E63;
 }
-p{
-    color: #FF2E63;
-    font-weight:  bold;
-    font-family: sans-serif;
-}
+
 .col-4{
     color: #FF2E63;
 }
@@ -89,3 +84,7 @@ th{
     width: 15vw;
 }
 
+.toto {
+    background-color: #E2F4FC;
+    color: #FF2E63;
+}
