@@ -11,6 +11,10 @@ Route::get('/product', [ProductController::class, 'index']);
 
 Route::get('/product/{id}', [ProductController::class, 'show']);
 
+Route::get('name', [ProductController::class, 'productByName']);
+
+Route::get('/price', [ProductController::class, 'productByPrice']);
+
 Route::get('/cart',[CartController::class, 'index']);
 
 
