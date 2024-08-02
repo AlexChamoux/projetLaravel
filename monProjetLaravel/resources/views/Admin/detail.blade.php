@@ -2,49 +2,58 @@
 <x-slot:title>Details du produit</x-slot:title>
     <x-slot:content>
         <h2>Liste des Produits</h2>
-        <table border="1">
-            <thead>
+        <table>
             <tr>
-                <th>ID</th>
-                <th>Nom</th>
-                <th>Description</th>
-                <th>Prix</th>
-                <th>Poids/th>
-                <th>Réduction</th>
-                <th>Url de l'image</th>
-                <th>Quantité restante</th>
-                <th>Status</th>
-                <th>Catégorie</th>
-                <th>Actions</th>
+                <td>ID</td>
+                <td>{{ $product->id }}</td>
             </tr>
-            </thead>
-            <tbody>
-            @foreach($products as $product)
-                <tr>
-                    <td>{{ $product->id }}</td>
-                    <td>{{ $product->name }}</td>
-                    <td>{{ $product->description }}</td>
-                    <td>{{ $product->price }}</td>
-                    <td>{{ $product->weight }}</td>
-                    <td>{{ $product->discount }}</td>
-                    <td>{{ $product->image }}</td>
-                    <td>{{ $product->quantity }}</td>
-                    <td>{{ $product->status }}</td>
-                    <td>{{ $product->categories_id }}</td>
-                    <td>
-                        <!-- Bouton pour éditer le produit -->
-                        <a href="{{ route('products.edit', $product->id) }}">Éditer</a>
-
-                        <!-- Formulaire pour supprimer le produit -->
-                        <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit">Supprimer</button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-            </tbody>
+            <tr>
+                <td>Nom</td>
+                <td>{{ $product->name }}</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>{{ $product->description }}</td>
+            </tr>
+            <tr>
+                <td>Prix</td>
+                <td>{{ $product->price }}</td>
+            </tr>
+            <tr>
+                <td>Poids</td>
+                <td>{{ $product->weight }}</td>
+            </tr>
+            <tr>
+                <td>Réduction</td>
+                <td>{{ $product->discount }}</td>
+            </tr>
+            <tr>
+                <td>Url de l'image</td>
+                <td>{{ $product->image }}</td>
+            </tr>
+            <tr>
+                <td>Quantité restante</td>
+                <td>{{ $product->quantity }}</td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>{{ $product->status }}</td>
+            </tr>
+            <tr>
+                <td>Catégorie</td>
+                <td>{{ $product->categories_id }}</td>
+            </tr>
+            <tr>
+                <td>Actions</td>
+                <td>
+                    <a href="{{ url('backoffice/edit', $product->id) }}">Éditer</a>
+                    <form action="{{ url('/backoffice/destroy/', $product->id) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
         </table>
     </x-slot:content>
 </x-layout>

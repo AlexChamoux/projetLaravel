@@ -21,11 +21,11 @@ Route::get('/products/price', [ProductController::class, 'productByPrice']);
 Route::get('/cart',[CartController::class, 'index']);
 
 
-Route::get('backoffice/show', [AdminController::class, 'show']);
+Route::get('backoffice/', [AdminController::class, 'index']);
 
 Route::get('/backoffice/create', [AdminController::class, 'create']);
 
-Route::post('/backoffice/show/{id}', [AdminController::class, 'show']);
+Route::get('/backoffice/show/{id}', [AdminController::class, 'show']);
 
 Route::get('/backoffice/edit/{id}', [AdminController::class, 'edit']);
 

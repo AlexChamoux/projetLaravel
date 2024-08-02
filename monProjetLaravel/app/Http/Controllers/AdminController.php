@@ -30,10 +30,10 @@ class AdminController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
-    }
+//    public function store(Request $request)
+//    {
+//        //
+//    }
 
     /**
      * Display the specified resource.
@@ -50,9 +50,10 @@ class AdminController extends Controller
      */
     public function edit(string $id)
     {
+        $product = Product::find($id);
 
-
-
+//        dump($product);
+        return view('admin.editCreate', compact('product'));
     }
 
     /**
@@ -62,6 +63,8 @@ class AdminController extends Controller
     {
         $product = Product::find($id);
         $product->update($request->all());
+
+        return redirect()->route('admin.index');
     }
 
     /**
