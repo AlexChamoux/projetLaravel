@@ -1,13 +1,18 @@
-@include('header')
+<x-layout>
+    <x-slot:title>Catalogue</x-slot:title>
 
-<div class="container">
-    <div class="row">
-        @for ($i = 0; $i < 10; $i++)
-            <div class="col-md-3">
-                @include('thumbnail')
+
+    <x-slot:content>
+        <div class="container">
+            <div class="row">
+                @foreach ($products as $product)
+                    <div class="col-md-4 mb-4">
+                        <a href="{{ url('/product/' . $product->id) }}" class="textDecoration">
+                            @include('thumbnail')
+                        </a>
+                    </div>
+                @endforeach
             </div>
-        @endfor
-    </div>
-</div>
-
-@include('footer')
+        </div>
+    </x-slot:content>
+</x-layout>

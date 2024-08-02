@@ -1,19 +1,21 @@
-<form action="panier.php" method="post" class="custom-thumbnail">
-    <h3 class="mb-3">Nom du produit</h3>
+<form action="/cart" method="post" class="custom-thumbnail">
+    <h3 class="mb-3 text-center">{{ $product->name }}</h3>
 
-    <input name="idProduct" type="hidden" value="" />
-    <div class="row">
-        <img src="{{ asset('images/dcshoes.jpg') }}" id="product-image" alt="Photo du produit">
+    <div class="image-container">
+        <img src="{{ asset($product->image) }}" id="product-image" alt="Photo de {{ $product->name }}">
+    </div>
 
-        <div class="row">
-            <p>
-                <label for="quantity">Quantité : </label>
-                <input type="number" id="quantity-thumbnail" name="quantity" min="0">
-            </p>
-            <p>NNN €</p>
+    <div class="details mt-3">
+        <div class="row mb-2">
+            <div class="col text-center">
+                <label for="quantity-{{ $product->id }}">Quantité : </label>
+                <input type="number" id="quantity-{{ $product->id }}" name="quantity" min="0" class="form-control">
+            </div>
         </div>
-        <p><input type="submit" value="Ajouter au panier"></p>
+
+        <p class="text-center mb-2">{{ number_format($product->price / 100, 2) }} €</p>
+        <input type="hidden" name="id" value="{{ $product->id }}">
+        <button type="submit" class="btn btn-danger btn-block">Ajouter au panier</button>
     </div>
 
 </form>
-

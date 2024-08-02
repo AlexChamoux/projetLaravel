@@ -3,22 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class ProductController extends Controller
 {
 
-    public function __construct(array $data = [])
+
+    public function index(): View
     {
-        $this->index($data);
-    }
-    public function index()
-    {
-        return view('product-list');
+        $products = DB::select('select * from products');
+
+        return view('product-list', ['products' => $products]);
     }
 
-    public function show($id)
+    public function show($id): View
     {
-        return view('product-details', ['id' => $id]);
+        $product = DB::select('select * from products where id = ?', [$id]);
+
+        return view('product-details', ['product' => $product[0]]);
     }
 
 }
