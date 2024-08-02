@@ -14,15 +14,17 @@ class AdminController extends Controller
     {
         $products = Product::all();
 
-        return view('admin.create', compact('products'));
+        return view('admin.index', compact('products'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
+        Product::create($request->all());
 
+        return redirect()->route('admin.editCreate');
     }
 
     /**
@@ -38,7 +40,9 @@ class AdminController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $product = Product::find($id);
+
+        return view('admin.detail', compact('product'));
     }
 
     /**
@@ -46,7 +50,9 @@ class AdminController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
+
+
     }
 
     /**
@@ -54,7 +60,8 @@ class AdminController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $product = Product::find($id);
+        $product->update($request->all());
     }
 
     /**
@@ -62,6 +69,7 @@ class AdminController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $post = Post::find($id);
+        $post->delete();
     }
 }

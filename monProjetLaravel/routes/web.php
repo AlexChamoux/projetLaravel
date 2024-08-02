@@ -25,7 +25,9 @@ Route::get('backoffice/show', [AdminController::class, 'show']);
 
 Route::get('/backoffice/create', [AdminController::class, 'create']);
 
-Route::get('/backoffice/{id}/edit', [AdminController::class, 'edit']);
+Route::post('/backoffice/show/{id}', [AdminController::class, 'show']);
 
-Route::get('/backoffice/{id}/delete', [AdminController::class, 'destroy']);
+Route::get('/backoffice/edit/{id}', [AdminController::class, 'edit']);
+
+Route::get('/backoffice/delete/{id}', [AdminController::class, 'destroy']);
 

@@ -1,5 +1,5 @@
 <x-layoutBack>
-    <x-slot:title>Create</x-slot:title>
+    <x-slot:title>Create or Edit</x-slot:title>
     <x-slot:content>
         <form action="{{ isset($product) ? route('products.update', $product->id) : route('products.store') }}" method="POST">
             @csrf
@@ -19,3 +19,5 @@
             </div>
             <button type="submit">{{ isset($product) ? 'Mettre à jour' : 'Ajouter' }} le Produit</button>
         </form>
+    </x-slot:content>
+</x-layoutBack>
