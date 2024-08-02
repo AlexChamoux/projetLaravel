@@ -1,12 +1,19 @@
 <x-layout>
-    <x-slot:title>Page de liste des produits triés par Nom</x-slot:title>
+    <x-slot:title>Produits triés par Nom</x-slot:title>
     <x-slot:content>
-        <h1>Liste des produits triés par Nom</h1>
+        <div class="container">
+            <div class="row">
+                <a href="{{ url('/products/price') }}">Trier par prix</a>
+                <a href="{{ url('/product/') }}">Catalogue de Base</a>
+                @foreach ($products as $product)
+                    <div class="col-md-4 mb-4">
 
-        <ul>
-            @foreach($products as $product)
-                <li>{{ $product->name }}</li>
-            @endforeach
-        </ul>
+                        <a href="{{ url('/product/' . $product->id) }}" class="textDecoration">
+                            @include('thumbnail')
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
     </x-slot:content>
 </x-layout>
