@@ -1,4 +1,4 @@
-<x-layout>
+<x-layoutBack>
 <x-slot:title>Details du produit</x-slot:title>
     <x-slot:content>
         <h2>Liste des Produits</h2>
@@ -46,8 +46,8 @@
             <tr>
                 <td>Actions</td>
                 <td>
-                    <a href="{{ url('backoffice/edit', $product->id) }}">Éditer</a>
-                    <form action="{{ url('/backoffice/destroy/', $product->id) }}" method="POST" style="display:inline;">
+                    <a href="{{ url('backoffice/edit', $product->id) }}" class="textDecoration">Éditer</a>
+                    <form action="{{ url('/backoffice/delete', $product->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
                         <button type="submit">Supprimer</button>
@@ -56,4 +56,4 @@
             </tr>
         </table>
     </x-slot:content>
-</x-layout>
+</x-layoutBack>

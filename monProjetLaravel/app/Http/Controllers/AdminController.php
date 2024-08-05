@@ -20,20 +20,29 @@ class AdminController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Request $request)
+    public function create()
     {
-        Product::create($request->all());
-
-        return redirect()->route('admin.editCreate');
+        return view('admin.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-//    public function store(Request $request)
-//    {
-//        //
-//    }
+    public function store(Request $request)
+    {
+        Product::create($request->only(
+            'name',
+            'description',
+            'price',
+            'weight',
+            'discount',
+            'image',
+            'quantity',
+            'status',
+            'categories_id'));
+
+        return redirect()->route('admin.index');
+    }
 
     /**
      * Display the specified resource.
@@ -53,16 +62,45 @@ class AdminController extends Controller
         $product = Product::find($id);
 
 //        dump($product);
-        return view('admin.editCreate', compact('product'));
+        return view('admin.edit', compact('product'));
     }
 
     /**
      * Update the specified resource in storage.
      */
+//    public function update(Request $request, string $id)
+//    {
+//        $product = Product::find($id);
+//        $data = [
+//            'name' => $request->input('name'),
+//            'description' => $request->input('description'),
+//            'price' => $request->input('price'),
+//            'weight' => $request->input('weight'),
+//            'discount' => $request->input('discount'),
+//            'image' => $request->input('image'),
+//            'quantity' => $request->input('quantity'),
+//            'status' => $request->input('status'),
+//            'categories_id' => $request->input('categories_id'),
+//];
+//        $product->update($data);
+//
+//        return redirect()->route('admin.index');
+//    }
+
     public function update(Request $request, string $id)
     {
         $product = Product::find($id);
-        $product->update($request->all());
+
+        $product->update($request->only(
+            'name',
+            'description',
+            'price',
+            'weight',
+            'discount',
+            'image',
+            'quantity',
+            'status',
+            'categories_id'));
 
         return redirect()->route('admin.index');
     }
@@ -72,7 +110,9 @@ class AdminController extends Controller
      */
     public function destroy(string $id)
     {
-        $post = Post::find($id);
-        $post->delete();
+        $product = Product::find($id);
+        $product->delete();
+
+        return redirect()->route('admin.index');
     }
 }

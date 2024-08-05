@@ -21,7 +21,7 @@ Route::get('/products/price', [ProductController::class, 'productByPrice']);
 Route::get('/cart',[CartController::class, 'index']);
 
 
-Route::get('backoffice/', [AdminController::class, 'index']);
+Route::get('backoffice/', [AdminController::class, 'index'])->name('admin.index');
 
 Route::get('/backoffice/create', [AdminController::class, 'create']);
 
@@ -29,5 +29,9 @@ Route::get('/backoffice/show/{id}', [AdminController::class, 'show']);
 
 Route::get('/backoffice/edit/{id}', [AdminController::class, 'edit']);
 
-Route::get('/backoffice/delete/{id}', [AdminController::class, 'destroy']);
+Route::delete('/backoffice/delete/{id}', [AdminController::class, 'destroy']);
 
+
+Route::post('/backoffice/store', [AdminController::class, 'store']);
+
+Route::post('/backoffice/update/{id}', [AdminController::class, 'update']);
