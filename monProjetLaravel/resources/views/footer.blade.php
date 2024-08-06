@@ -1,45 +1,44 @@
-<footer>
-    <div   >
-        <footer class="py-5 ps-3">
-            <div class="row">
-                <div class="col-2">
-                    <h5>Sneakers</h5>
 
-                </div>
 
-                <div class="col-2">
-                    <h5>Chaussures de Skate</h5>
 
-                </div>
 
-                <div class="col-2">
-                    <h5>Chaussure de Montagne</h5>
-
-                </div>
-
-                <div class="col-4 offset-1">
-                    <form>
-                        <h5>Inscrivez-vous à notre newsletter</h5>
-                        <div class="d-flex w-100 gap-2">
-                            <label for="newsletter1" class="visually-hidden">Addresse mail</label>
-                            <input id="newsletter1" type="text" class="form-control" placeholder="Addresse mail">
-                            <button class="btn btn-primary" type="button">S'abonner</button>
-                        </div>
-                    </form>
-                </div>
+<!-- Footer -->
+<footer class="footer bg-dark text-light">
+    <div class="container">
+        <div class="row py-4">
+            <div class="col-md-4 mb-3">
+                <h5>À propos de nous</h5>
+                <p class="text-muted">Découvrez notre collection exclusive de chaussures pour toutes les occasions.</p>
             </div>
-
-            <div class="d-flex justify-content-between py-4 my-4 border-top">
-                <p>CGV</p>
-                <p> Mentions légales</p>
-                <p>Protection des données</p>
-                <ul class="list-unstyled d-flex">
-                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+            <div class="col-md-4 mb-3">
+                <h5>Contact</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="mailto:contact@monsite.com" class="text-muted">contact@monsite.com</a></li>
+                    <li class="mb-2"><a href="tel:+123456789" class="text-muted">+123 456 789</a></li>
                 </ul>
             </div>
-        </footer>
+            <div class="col-md-4 mb-3">
+                <h5>Suivez-nous</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#" class="text-muted">Facebook</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted">Instagram</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-muted">© 2024 Company, Inc</p>
+            <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Accueil</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Caractéristiques</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Tarifs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">À propos</a></li>
+            </ul>
+        </div>
     </div>
 </footer>
 
