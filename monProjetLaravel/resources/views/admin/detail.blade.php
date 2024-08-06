@@ -46,7 +46,7 @@
             <tr>
                 <td>Actions</td>
                 <td>
-                    <a href="{{ url('backoffice/edit', $product->id) }}" class="textDecoration">Éditer</a>
+                    <a href="{{ url('backoffice/edit', $product->id) }}" class="textDecoration"><button type="submit">Éditer</button></a>
                     <form action="{{ url('/backoffice/delete', $product->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')

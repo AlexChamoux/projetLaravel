@@ -11,10 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('products', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('products')) {
+            Schema::create('products', function (Blueprint $table) {
+                $table->id();
+                $table->string('name');
+                $table->string('description');
+                $table->integer('price');
+                $table->integer('weight');
+                $table->integer('discount');
+                $table->string('image');
+                $table->integer('quantity');
+                $table->integer('status');
+                $table->integer('category_id');
+            });
+        }
     }
 
     /**

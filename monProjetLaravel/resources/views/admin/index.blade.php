@@ -17,7 +17,7 @@
                             <button type="submit"  class="btn-info">Supprimer</button>
                         </form>
                     </td>
-                    <td><a href="{{ url('/backoffice/show/' . $product->id) }}" class="textDecoration"><button class="btn-info">Voir en Détail</button></a></td>
+                    <td><a href="/backoffice/showe" class="textDecoration"><button class="btn-info">Voir en Détail</button></a></td>
                 </tr>
             @endforeach
 
