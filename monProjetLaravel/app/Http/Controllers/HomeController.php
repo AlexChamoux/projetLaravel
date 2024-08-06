@@ -15,9 +15,24 @@ class HomeController extends Controller
         return View('homepage');
     }
 
-    public function about(){
-        $data = Order::all();
+//    public function about($id){
+//
+//        $data = Order::findOrFail($id);
+//        dd('toto');
+//        return View('about.about');
+//    }
 
-        return View('about.about', compact('data'));
+    public function productsByOrder($id)
+    {
+        $order = Order::with('products')->findOrFail($id);
+
+        return View('about.about', compact('order'));
+    }
+
+    public function productsByOrderAndCategory($id)
+    {
+        $order = Order::with(['products.category'])->findOrFail($id);
+
+        return View('about.about', compact('order'));
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
@@ -30,16 +31,25 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create($request->only(
-            'name',
-            'description',
-            'price',
-            'weight',
-            'discount',
-            'image',
-            'quantity',
-            'status',
-            'categories_id'));
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|255',
+            'description' => 'required|string',
+            'price' => 'required|integer|min:0',
+            'weight' => 'required|integer|min:0',
+            'discount' => 'required|integer|min:0',
+            'image' => 'required|string|255',
+            'quantity' => 'required|integer|min:0',
+            'status' => 'required|integer|min:0',
+            'categories_id' => 'required|integer|min:0',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('admin.create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        Product::create($validator->validated());
 
         return redirect()->route('admin.index');
     }
@@ -49,7 +59,7 @@ class AdminController extends Controller
      */
     public function show(string $id)
     {
-        $product = Product::find($id);
+        $product = Product::findOrFail($id);
 
         return view('admin.detail', compact('product'));
     }
@@ -59,7 +69,7 @@ class AdminController extends Controller
      */
     public function edit(string $id)
     {
-        $product = Product::find($id);
+        $product = Product::findOrFail($id);
 
 //        dump($product);
         return view('admin.edit', compact('product'));
@@ -68,39 +78,29 @@ class AdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-//    public function update(Request $request, string $id)
-//    {
-//        $product = Product::find($id);
-//        $data = [
-//            'name' => $request->input('name'),
-//            'description' => $request->input('description'),
-//            'price' => $request->input('price'),
-//            'weight' => $request->input('weight'),
-//            'discount' => $request->input('discount'),
-//            'image' => $request->input('image'),
-//            'quantity' => $request->input('quantity'),
-//            'status' => $request->input('status'),
-//            'categories_id' => $request->input('categories_id'),
-//];
-//        $product->update($data);
-//
-//        return redirect()->route('admin.index');
-//    }
-
     public function update(Request $request, string $id)
     {
-        $product = Product::find($id);
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|255',
+            'description' => 'required|string',
+            'price' => 'required|integer|min:0',
+            'weight' => 'required|integer|min:0',
+            'discount' => 'required|integer|min:0',
+            'image' => 'required|string|255',
+            'quantity' => 'required|integer|min:0',
+            'status' => 'required|integer|min:0',
+            'categories_id' => 'required|integer|min:0',
+        ]);
 
-        $product->update($request->only(
-            'name',
-            'description',
-            'price',
-            'weight',
-            'discount',
-            'image',
-            'quantity',
-            'status',
-            'categories_id'));
+        if ($validator->fails()) {
+            return redirect()->route('admin.edit', $id)
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $product = Product::findOrFail($id);
+
+        $product->update($validator->validated());
 
         return redirect()->route('admin.index');
     }
@@ -110,7 +110,7 @@ class AdminController extends Controller
      */
     public function destroy(string $id)
     {
-        $product = Product::find($id);
+        $product = Product::findOrFail($id);
         $product->delete();
 
         return redirect()->route('admin.index');

@@ -26,11 +26,13 @@ Route::post('/backoffice/store', [AdminController::class, 'store']);
 Route::get('/backoffice/show/{id}', [AdminController::class, 'show']);
 
 Route::get('/backoffice/edit/{id}', [AdminController::class, 'edit']);
-Route::post('/backoffice/update/{id}', [AdminController::class, 'update']);
+Route::put('/backoffice/update/{id}', [AdminController::class, 'update']);
 
 Route::delete('/backoffice/delete/{id}', [AdminController::class, 'destroy']);
 
 
-Route::get('/HomeController', [HomeController::class, 'about']);
+Route::get('/HomeController/productByOrder/{id}', [HomeController::class, 'productsByOrder']);
+
+Route::get('/HomeController/productByOrderAndCategory/{id}', [HomeController::class, 'productsByOrderAndCategory']);
 
 

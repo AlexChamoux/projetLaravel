@@ -3,6 +3,7 @@
     <x-slot:content>
         <form action="{{ url('/backoffice/update/' . $product->id)  }}" method="POST">
             @csrf
+            @method('PUT')
             <div>
                 <label for="name">Nom du Produit :</label>
                 <input type="text" id="name" name="name" value="{{ old('name', $product->name) }}" required>
