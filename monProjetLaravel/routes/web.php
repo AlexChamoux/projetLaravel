@@ -32,7 +32,8 @@ Route::delete('/backoffice/delete/{id}', [AdminController::class, 'destroy']);
 
 
 Route::get('/HomeController/productByOrder/{id}', [HomeController::class, 'productsByOrder']);
-
 Route::get('/HomeController/productByOrderAndCategory/{id}', [HomeController::class, 'productsByOrderAndCategory']);
+Route::get('/HomeController/productByCategory/', [HomeController::class, 'productsByCategory']);
+
 
 

@@ -35,4 +35,11 @@ class HomeController extends Controller
 
         return View('about.about', compact('order'));
     }
+
+    public function productsByCategory()
+    {
+        $categories = Category::with('products')->get();
+
+        return View('about.catalog', compact('categories'));
+    }
 }
