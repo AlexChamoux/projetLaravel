@@ -9,13 +9,14 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return view('product-list');
+        $products = Product::with('category')->get();
+        return view('product-list', compact('products'));
     }
 
     public function show($id)
     {
-        $product = Product::find($id);
-        return view('product-details', ['product' => $product]);
+        $product = Product::with('category')->findOrFail($id);
+        return view('product-details', compact('product'));
     }
 
 }
