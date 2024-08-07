@@ -31,17 +31,23 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
+        $messages = [
+            'name.required' => 'Le nom du produit est obligatoire.',
+            'price.required' => 'Le prix du produit est obligatoire.',
+            'price.min' => 'Le prix du produit ne peut pas être négatif.',
+            ];
+
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|255',
+            'name' => 'required|string|max:255',
             'description' => 'required|string',
             'price' => 'required|integer|min:0',
             'weight' => 'required|integer|min:0',
             'discount' => 'required|integer|min:0',
-            'image' => 'required|string|255',
+            'image' => 'required|string|max:255',
             'quantity' => 'required|integer|min:0',
             'status' => 'required|integer|min:0',
             'categories_id' => 'required|integer|min:0',
-        ]);
+        ], $messages);
 
         if ($validator->fails()) {
             return redirect()->route('admin.create')
@@ -80,17 +86,23 @@ class AdminController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $messages = [
+            'name.required' => 'Le nom du produit est obligatoire.',
+            'price.required' => 'Le prix du produit est obligatoire.',
+            'price.min' => 'Le prix du produit ne peut pas être négatif.',
+        ];
+
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|255',
+            'name' => 'required|string|max:255',
             'description' => 'required|string',
             'price' => 'required|integer|min:0',
             'weight' => 'required|integer|min:0',
             'discount' => 'required|integer|min:0',
-            'image' => 'required|string|255',
+            'image' => 'required|string|max:255',
             'quantity' => 'required|integer|min:0',
             'status' => 'required|integer|min:0',
             'categories_id' => 'required|integer|min:0',
-        ]);
+        ], $messages);
 
         if ($validator->fails()) {
             return redirect()->route('admin.edit', $id)

@@ -42,4 +42,12 @@ class HomeController extends Controller
 
         return View('about.catalog', compact('categories'));
     }
+
+    public function order($id)
+    {
+
+
+
+    }
+
 }
