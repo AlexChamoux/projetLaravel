@@ -1,11 +1,12 @@
-@include('header')
+<x-layout>
+    <x-slot:title>Accueil</x-slot:title>
+    <x-slot:content>
+        <main role="main" class="container">
 
 
-<main role="main" class="container">
+        </main>
 
 
-</main>
 
-@include('footer')
-
-
+    </x-slot:content>
+</x-layout>
