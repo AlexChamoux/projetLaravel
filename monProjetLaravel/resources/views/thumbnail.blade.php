@@ -1,4 +1,5 @@
-<form action="/cart" method="post" class="custom-thumbnail">
+<form action="{{ route('cart.add', ['product' => $product->id]) }}" method="post" class="custom-thumbnail">
+    @csrf
     <h3 class="mb-3 text-center">{{ $product->name }}</h3>
 
     <div class="image-container">
